@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #holder{
+        display: flex;
+        gap: 200px;
+    }
+</style>
+<body>
+    <div id="holder">
+ <div id="firstholder">
+   <input id="input1" type="text">
+   <button id="but1" onclick="displayOne()">Print</button>
+   <div id="div1"></div>
+</div>
+<div id="secondholder">
+   <input id="input2" type="text">
+   <button id="but2" onclick="displayTwo()">Checkers</button>
+   <div id="div2"></div>
+</div>
+</div>
+
+<script>
+   let array = []
+  let input1 = document.getElementById("input1")
+  let input2 = document.getElementById("input2")
+  let div1 = document.getElementById("div1")
+  let div2 = document.getElementById("div2")
+
+
+
+function displayOne() {    
+ array.unshift(input1.value);
+    div1.innerHTML = `<h1>${array}</h1>`
+}
+    
+function displayTwo() {
+    div2.innerHtml =""
+    if (array.includes(input2.value)) {
+        array.find((e)=> e == input2.value)
+        div2.innerHTML = "Available" 
+    }else{
+        div2.innerHTML = " Not available"
+
+    }
+}
+// function displayTwo() {
+//     if (array.includes(input2.value)) {
+//           div2.innerHTML += "Available"
+//     }else if ( !array == input2.value) {
+//         div2.innerHTML += " Not available"
+        
+//     }else{
+//         input2.value = ""
+//         alert ("No input seen")
+//     }
+// }
+
+  
+
+</script>
+</body>
+</html>
